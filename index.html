@@ -3,40 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Random Image Website</title>
+    <title>Random Image and Text Website</title>
     <style>
         body {
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             height: 100vh;
             margin: 0;
             background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+        #content {
+            max-width: 80%;
+            text-align: center;
         }
         img {
             max-width: 100%;
-            max-height: 80vh;
+            max-height: 60vh;
             box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        #buttons {
+            margin-bottom: 20px;
+        }
+        button {
+            margin: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        #text {
+            font-size: 24px;
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
-    <img id="randomImage" src="" alt="Random Image">
+    <div id="buttons">
+        <button onclick="showContent('adele')">Adele</button>
+        <button onclick="showContent('trevor')">Trevor</button>
+        <button onclick="showContent('adele-and-trevor')">Adele and Trevor</button>
+        <button onclick="showContent('affirmation')">Affirmation</button>
+        <button onclick="showContent('quote')">Quote</button>
+    </div>
+    <div id="content">
+        <img id="randomImage" src="" alt="Random Image" style="display: none;">
+        <div id="text"></div>
+    </div>
 
     <script>
-        const imageNames = [
-            'baseball.jpg',
-            'basketball.avif',
-            'football.jpg',
-        ];
+        const imageDirectories = {
+            'adele': ['adele1.jpg', 'adele2.jpg', 'adele3.jpg'],
+            'trevor': ['trevor1.jpg', 'trevor2.jpg', 'trevor3.jpg'],
+            'adele-and-trevor': ['together1.jpg', 'together2.jpg', 'together3.jpg']
+        };
 
-        function displayRandomImage() {
-            const randomIndex = Math.floor(Math.random() * imageNames.length);
+        const textLists = {
+            'affirmation': [
+                "You are capable of amazing things.",
+                "Your potential is limitless.",
+                "You make a difference in the world."
+            ],
+            'quote': [
+                "Be the change you wish to see in the world. - Gandhi",
+                "The only way to do great work is to love what you do. - Steve Jobs",
+                "In the middle of difficulty lies opportunity. - Albert Einstein"
+            ]
+        };
+
+        function showContent(type) {
             const imageElement = document.getElementById('randomImage');
-            imageElement.src = 'img/' + imageNames[randomIndex];
-        }
+            const textElement = document.getElementById('text');
 
-        window.onload = displayRandomImage;
+            if (imageDirectories[type]) {
+                const images = imageDirectories[type];
+                const randomIndex = Math.floor(Math.random() * images.length);
+                imageElement.src = `img/${type}/${images[randomIndex]}`;
+                imageElement.style.display = 'block';
+                textElement.style.display = 'none';
+            } else if (textLists[type]) {
+                const texts = textLists[type];
+                const randomIndex = Math.floor(Math.random() * texts.length);
+                textElement.textContent = texts[randomIndex];
+                textElement.style.display = 'block';
+                imageElement.style.display = 'none';
+            }
+        }
     </script>
 </body>
 </html>
