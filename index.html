@@ -3,94 +3,131 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Random Image and Text Website</title>
+    <title>Adele's Happy Place</title>
     <style>
-        body {
+        @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:wght@300;400;700&display=swap');
+
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            display: flex;
+            flex-direction: column;
+        }
+        .full-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('img/background.jpeg');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            z-index: -1;
+        }
+        .top-content {
+            text-align: center;
+            padding: 20px;
+            background-color: rgba(240, 240, 240, 0.8);
+        }
+        .greeting {
+            font-size: 24px;
+            font-weight: 700;
+            color: #333;
+        }
+        .content-container {
+            flex-grow: 1;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f0f0f0;
-            font-family: Arial, sans-serif;
+            padding: 20px;
         }
-        #content {
+        .image-container {
+            position: relative;
             max-width: 80%;
+            max-height: 70vh;
+            margin-bottom: 20px;
+        }
+        .random-image {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            box-shadow: 0 0 20px rgba(0,0,0,0.3);
+            border-radius: 10px;
+        }
+        .quote {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0));
+            color: white;
+            padding: 20px;
+            font-style: italic;
+            font-size: 18px;
             text-align: center;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
         }
-        img {
-            max-width: 100%;
-            max-height: 60vh;
-            box-shadow: 0 0 20px rgba(0,0,0,0.1);
-            margin-bottom: 20px;
+        .bottom-text {
+            font-family: 'Pacifico', cursive;
+            color: #FF69B4;
+            font-size: 4vw;
+            text-align: center;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5),
+                         -2px -2px 4px rgba(255,255,255,0.5);
+            background-color: rgba(255, 255, 255, 0.7);
+            padding: 15px 30px;
+            border-radius: 50px;
+            transform: rotate(-5deg);
+            transition: all 0.3s ease;
         }
-        #buttons {
-            margin-bottom: 20px;
-        }
-        button {
-            margin: 5px;
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-        }
-        #text {
-            font-size: 24px;
-            margin-top: 20px;
+        .bottom-text:hover {
+            transform: rotate(5deg) scale(1.1);
+            box-shadow: 0 0 20px rgba(255,105,180,0.7);
         }
     </style>
 </head>
 <body>
-    <div id="buttons">
-        <button onclick="showContent('adele')">Adele</button>
-        <button onclick="showContent('trevor')">Trevor</button>
-        <button onclick="showContent('adele-and-trevor')">Adele and Trevor</button>
-        <button onclick="showContent('affirmation')">Affirmation</button>
-        <button onclick="showContent('quote')">Quote</button>
+    <div class="full-background"></div>
+    <div class="top-content">
+        <div class="greeting">Hi there!</div>
     </div>
-    <div id="content">
-        <img id="randomImage" src="" alt="Random Image" style="display: none;">
-        <div id="text"></div>
+    <div class="content-container">
+        <div class="image-container">
+            <img id="randomImage" class="random-image" src="" alt="Random Image">
+            <div id="quote" class="quote"></div>
+        </div>
+        <div class="bottom-text">Adele's Happy Place</div>
     </div>
 
     <script>
-        const imageDirectories = {
-            'adele': ['adele1.jpeg', 'adele2.jpeg', 'adele3.jpeg'],
-            'trevor': ['trevor1.jpeg', 'trevor2.jpeg', 'trevor3.jpeg'],
-            'adele-and-trevor': ['together1.jpg', 'together2.jpg', 'together3.jpg']
-        };
+        const totalImages = 9;
+        const quotes = [
+            "The only way to do great work is to love what you do. - Steve Jobs",
+            "Believe you can and you're halfway there. - Theodore Roosevelt",
+            "The future belongs to those who believe in the beauty of their dreams. - Eleanor Roosevelt",
+            "Strive not to be a success, but rather to be of value. - Albert Einstein",
+            "The only impossible journey is the one you never begin. - Tony Robbins"
+        ];
 
-        const textLists = {
-            'affirmation': [
-                "You are capable of amazing things.",
-                "Your potential is limitless.",
-                "You make a difference in the world."
-            ],
-            'quote': [
-                "Be the change you wish to see in the world. - Gandhi",
-                "The only way to do great work is to love what you do. - Steve Jobs",
-                "In the middle of difficulty lies opportunity. - Albert Einstein"
-            ]
-        };
-
-        function showContent(type) {
-            const imageElement = document.getElementById('randomImage');
-            const textElement = document.getElementById('text');
-
-            if (imageDirectories[type]) {
-                const images = imageDirectories[type];
-                const randomIndex = Math.floor(Math.random() * images.length);
-                imageElement.src = `img/${type}/${images[randomIndex]}`;
-                imageElement.style.display = 'block';
-                textElement.style.display = 'none';
-            } else if (textLists[type]) {
-                const texts = textLists[type];
-                const randomIndex = Math.floor(Math.random() * texts.length);
-                textElement.textContent = texts[randomIndex];
-                textElement.style.display = 'block';
-                imageElement.style.display = 'none';
-            }
+        function setRandomImage() {
+            const randomNumber = Math.floor(Math.random() * totalImages) + 1;
+            const imagePath = `img/img${randomNumber}.jpeg`;
+            document.getElementById('randomImage').src = imagePath;
         }
+
+        function setRandomQuote() {
+            const randomIndex = Math.floor(Math.random() * quotes.length);
+            document.getElementById('quote').textContent = quotes[randomIndex];
+        }
+
+        window.onload = function() {
+            setRandomImage();
+            setRandomQuote();
+        };
     </script>
 </body>
 </html>
