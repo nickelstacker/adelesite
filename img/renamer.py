@@ -14,7 +14,7 @@ def rename_files_in_directory(directory):
     for filename in files:
 
         # Skip files that contain "background" in the name
-        if "background" in filename or "renamer" in filename or "img" in filename:
+        if "background" in filename or "renamer" in filename:
             continue
 
         # Construct the new file name

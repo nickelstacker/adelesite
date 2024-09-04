@@ -109,7 +109,7 @@
     </div>
 
     <script>
-        const totalImages = 89;
+        const totalImages = 225;
         const quotes = [
                 "I invite nourishing energy and wonderful people into my day.",
                 "I have all the energy and confidence I need to make the most of today.",
@@ -236,6 +236,7 @@
             const randomNumber = Math.floor(Math.random() * totalImages) + 1;
             const imagePath = `img/img${randomNumber}.jpeg`;
             document.getElementById('randomImage').src = imagePath;
+            console.log(imagePath);
         }
 
         function setRandomQuote() {
