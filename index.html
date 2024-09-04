@@ -32,8 +32,8 @@
             background-color: rgba(240, 240, 240, 0.8);
         }
         .greeting {
-            font-size: 24px;
-            font-weight: 700;
+            font-size: 16px;
+            font-weight: 600;
             color: #333;
         }
         .content-container {
@@ -93,7 +93,12 @@
 <body>
     <div class="full-background"></div>
     <div class="top-content">
-        <div class="greeting">Hi there!</div>
+        <div class="greeting">
+            Hi babe! It's Trevor. Welcome to your new little happy place :)<br /> 
+            Each day you'll get a new picture and a new affirmation to start your day off right.<br \>
+            It's not much, but I hope you like it! I'd like to expand it someday, but have to start somewhere right?<br \>
+            I love you <3
+    </div>
     </div>
     <div class="content-container">
         <div class="image-container">
@@ -104,13 +109,127 @@
     </div>
 
     <script>
-        const totalImages = 9;
+        const totalImages = 89;
         const quotes = [
-            "The only way to do great work is to love what you do. - Steve Jobs",
-            "Believe you can and you're halfway there. - Theodore Roosevelt",
-            "The future belongs to those who believe in the beauty of their dreams. - Eleanor Roosevelt",
-            "Strive not to be a success, but rather to be of value. - Albert Einstein",
-            "The only impossible journey is the one you never begin. - Tony Robbins"
+                "I invite nourishing energy and wonderful people into my day.",
+                "I have all the energy and confidence I need to make the most of today.",
+                "My positive, beneficial energy makes me powerful.",
+                "I radiate confidence, positiveness, and readiness toward everyone around me.",
+                "I reject negativity. I let go of what no longer serves me.",
+                "I am energetic, and I’m ready to face whatever the day holds.",
+                "A powerful aura of energy and light surrounds me.",
+                "I am open to receiving beneficial energy from the universe.",
+                "I focus on thoughts that empower and uplift me. I release thoughts that drain me and bring me down.",
+                "My thoughts are clear, open, and uplifting. They nourish my mind and soul.",
+                "Each day, my life gets better in every way.",
+                "I am grateful for the blessings I already have and the blessings that come to me throughout each day.",
+                "The universe sends me the opportunities I need. I will embrace them and prioritize the ones that match my personal vision.",
+                "I’m ready to fill my heart and mind with energy and live with satisfaction and peace.",
+                "I am a magnet for good thoughts and energy. Everything I need flows through me.",
+                "Today, I choose to love myself just as I am.",
+                "I love who I am today. I love my mind. I love my body. I love my soul.",
+                "I am on the path to becoming my best self and living my best life. I will embrace every step along the way.",
+                "I am worthy of good things. I have a right to comfort and prosperity.",
+                "I let go of thoughts and beliefs that no longer serve me. Today, I am open to seeing myself in new ways.",
+                "I am beautiful. I am unique. I have a wonderful sense of humor. I am truly special.",
+                "I give myself time and opportunity to heal.",
+                "I am the hero in my own story. I’m eager to turn to the next page.",
+                "I am entitled to take up space. I move through the world freely and confidently.",
+                "I am at peace with who I am. I won’t apologize for being me.",
+                "I am balanced, independent, and strong.",
+                "I am responsible for my own satisfaction and well-being.",
+                "Today, I will show myself love and compassion.",
+                "I don’t need anyone else’s approval—just my own.",
+                "I freely give and receive love.",
+                "My thoughts or feelings may be uncomfortable, but I will work through them.",
+                "I am resilient and strong. I can handle anything that comes my way.",
+                "I have the power and the courage to make the best choices both for myself and for my loved ones.",
+                "I am stronger than my fears. They can’t control me.",
+                "If I fall, I’ll get back up. If I fall again, I’ll get back up again.",
+                "Today, I embrace the people and things that make me feel good.",
+                "I am calm. I have a peaceful mindset.",
+                "Today, I’ll take one hour at a time. I won’t worry about tomorrow.",
+                "Nothing can break me.",
+                "I may feel anxious, but it will pass.",
+                "I will take one step in the right direction today.",
+                "I will focus on the solutions, not the problems.",
+                "I am grounded. I am centered. I am at peace.",
+                "With every challenge, I will understand myself better.",
+                "Today, I free myself to feel my emotions without judgment.",
+                "I am connected to the earth and the natural world, and I am open to the guidance that comes from nature.",
+                "I am protected and supported by the people I love. I deserve to have my needs met.",
+                "I feel creativity flowing through me.",
+                "I feel radiant, passionate, and creative.",
+                "I can make the changes I desire whenever I want.",
+                "I can face challenges with confidence as I pursue my purpose.",
+                "I love and I am loved.",
+                "I attract kind and loving people. I embrace harmonious relationships.",
+                "I speak my truth clearly, calmly, and openly.",
+                "With my voice, I can make a difference in the world each day.",
+                "I see all situations as an opportunity to learn and grow.",
+                "I trust my intuition. I use it to guide me toward my divine purpose.",
+                "I know everyone is doing the best they can with the tools they have.",
+                "Inner peace flows through me.",
+                "Today, I move ahead in my life with faith, love, and light.",
+                "My time is valuable. I’m allowed to say no.",
+                "I know my self-worth. I don’t need validation from other people.",
+                "I embrace my imperfections. They make me unique.",
+                "I won’t waste time on people who don’t value me.",
+                "I will walk confidently toward the future.",
+                "I can take risks without fear.",
+                "I will celebrate even the smallest wins.",
+                "I have limitless potential. I will tap into it every day.",
+                "I can accept and embrace the compliments I’m given. I have earned them.",
+                "I won’t apologize for expressing my thoughts and feelings.",
+                "I have the power to design my future.",
+                "I take care of my mind, body, and spirit. I am growing stronger each day.",
+                "Today, I will be my authentic self.",
+                "The world is a better place because I’m in it.",
+                "I am motivated, focused, and capable. I can take on the world.",
+                "I have the power and the tools to change my situation any way I want.",
+                "I can balance the masculine and feminine energies that coexist inside me.",
+                "I can take care of my family financially and still pursue my dreams.",
+                "I am grateful for the opportunities I have now and for those that are soon to come.",
+                "I embrace joy, peace of mind, and contentment.",
+                "I can express my emotions without judging myself.",
+                "I will always be a work in progress and I accept that. I can continue to learn and grow.",
+                "I don’t have to be perfect today. I don’t have to be perfect tomorrow, either.",
+                "How I feel matters. What I think matters. I matter.",
+                "I will give myself respect, even if others don’t.",
+                "I can smile when I’m happy and cry when I’m sad.",
+                "I’m entitled to be in strong relationships that make me feel happy, assured, and loved.",
+                "The journey ahead may be challenging, but I am capable of facing and overcoming any obstacles to my happiness.",
+                "I embrace today with optimism, hope, and faith that things will turn out as they’re meant to.",
+                "I am strong. I can handle anything that comes my way.",
+                "I am prepared for my dreams to come true. I welcome prosperity.",
+                "When the right door opens, I will step through it.",
+                "I embrace unexpected opportunities as the blessings they are.",
+                "I am focused on my dreams. I will work toward them each day with passion, drive, and integrity.",
+                "When I embrace opportunities, more and more doors open for me.",
+                "When I set my mind to it, I can easily achieve my goals.",
+                "I face challenges and obstacles with courage and confidence.",
+                "Every experience I have is a gift. I learn and grow as a result.",
+                "What’s happening now will lead to better things.",
+                "Today, I will embrace new, healthier habits to help me reach my goals.",
+                "I believe in myself. I can design and build the life I want.",
+                "Hard work always pays off. I will see the results of it every day.",
+                "I choose optimistic, decisive thoughts that promote progress and achievement.",
+                "Today, I will take one step forward on the path to reaching my goals and dreams.",
+                "When I inhale, my muscles relax. When I exhale, tension leaves with my breath.",
+                "I’ll get through today by taking small steps.",
+                "I am strong. I am capable. I am enough.",
+                "My experiences are my foundation. They give me the building blocks I need to succeed.",
+                "The anxiety and panic I’m feeling will pass. It always does.",
+                "At this moment, I’m doing the best I can and living my best life. I’m proud of myself for that.",
+                "I am loved, supported, and safe.",
+                "I have all the tools I need to get through this.",
+                "I will leave the past in the past. I will leave the future in the future. I will only concentrate on the present.",
+                "I will slow down and focus on one thing at a time.",
+                "Today, I will take care of myself first. That includes my mind and spirit.",
+                "I’m uncomfortable, but I’m not in danger.",
+                "Today is over. I celebrate the day’s wins and free myself of what no longer serves me. If I made a mistake, I forgive myself.",
+                "What I feel is normal and it will pass.",
+                "This situation may be hard, but I have the strength to rise above it."
         ];
 
         function setRandomImage() {
